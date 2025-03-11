@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+    --header-text-color: rgb(221 119 171);
+    --header-shadow: rgb(201,76,138);
+    --lilac: #e6e8ff;
+
+    --h1-font: "Titillium+Web";
+    --h1-size:150px;
+    --h1-weight: 700;
+    --h2-font: "Titillium+Web";
+    --h2-size: 100px;
+    --h2-weight: 600;
+    --normal-font: "Nunito:ital";
+    --normal-weight-bold: 500;
+    --normal-weight: 300;
+    --normal-size: 1rem;
+    --normal-size-bold:1.5rem;
+}
+.loginsignup{
+    width: 100%;
+    height: 84.5vh;
+    background: var(--lilac);
+    padding-top: 100px;
+}
+.loginsignup-container{
+    width: 580px;
+    height: 500px;
+    background: white;
+    margin: auto;
+    padding: 40px 60px;
+    border-radius: 20px;
+}
+.loginsignup-container h1{
+    margin: 20px 0px;
+    font: var(--h1-font);
+    font-weight: var(--h1-weight);
+    font-size: 70px;
+    color: var(--header-text-color);
+}
+.loginsignup-fields{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    height: 150px;
+}
+.loginsignup-fields input{
+    height: 60px;
+    width: 100%;
+    padding-left: 20px;
+    border: 1px solid;
+    outline: none;
+    color: var(--header-text-color);
+    font-size: var(--normal-size);
+    font: var(--normal-font);
+    border-radius: 10px;
+}
+.loginsignup-container button{
+    display: block;
+    width: 480px;
+    height: 65px;
+    color: white;
+    background: var(--header-shadow);
+    margin: 30px auto 0;
+    border: none;
+    font-size: var(--normal-size);
+    font-weight: 500;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.loginsignup-login{
+    margin-top: 20px;
+    color: grey;
+    font-size: var(--normal-size);
+    font-weight: var(--normal-weight);
+}
+.loginsignup-login span{
+    color: #77cbdd;
+    font-weight: var(--normal-weight-bold);
+}
+.loginsignup-agree{
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+    gap: 20px;
+    color: grey;
+    font-size: 20px;
+    font-weight: 500;
+}

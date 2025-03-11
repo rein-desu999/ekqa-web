@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+    --header-text-color: rgb(221 119 171);
+    --header-shadow: rgb(201,76,138);
+    --lilac: #e6e8ff;
+
+    --h1-font: "Titillium+Web";
+    --h1-size:150px;
+    --h1-weight: 700;
+    --h2-font: "Titillium+Web";
+    --h2-size: 100px;
+    --h2-weight: 600;
+    --normal-font: "Nunito:ital";
+    --normal-weight-bold: 500;
+    --normal-weight: 300;
+    --normal-size: 1rem;
+    --normal-size-bold:1.5rem;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 5px;
+}
+.footer-logo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.footer-logo img{
+    width: 60px;
+    height: auto;
+    cursor: pointer;
+}
+.footer-logo p{
+    color: var(--header-text-color);
+    font: var(--h2-font);
+    font-size: var(--normal-size-bold);
+    font-weight: var(--h1-weight);
+}
+.footer-links{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    color: var(--header-shadow);
+    font-size: 20px;
+}
+.footer-links li{
+    cursor: pointer;
+}
+.footer-socials-icon{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.footer-icons-container{
+    padding: 10px;
+    padding-bottom: 6px;
+    background: white;
+}
+.footer-icons-container img{
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+.footer-copyright{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #1a1a1a;
+    font-size: 15px;
+}
+.footer-copyright hr{
+    width: 80%;
+    border: none;
+    border-radius: 10px;
+    height: 3px;
+    background: lightblue;
+}

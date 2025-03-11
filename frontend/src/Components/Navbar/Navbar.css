@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+    --header-text-color: rgb(221 119 171);
+    --header-shadow: rgb(201,76,138);
+    --lilac: #e6e8ff;
+
+    --h2-font: "Titillium+Web";
+    --h2-size: 2rem;
+    --h2-weight: 600;
+    --normal-font: "Nunito:ital";
+    --normal-weight-bold: 500;
+    --normal-weight: 300;
+    --normal-size: 1rem;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 10px 0;
+    box-shadow: 0 1px 3px -2px black;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.nav-logo img{
+    width: 75px;
+    height: auto;
+}
+.nav-logo p{
+    color: var(--header-text-color);
+    font-size: 2rem;
+    font-weight: var(--h2-weight);
+    font-style: var(--h2-font);
+    cursor: pointer;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 35px;
+    color: var(--header-text-color);
+    font-size: 1.2rem;
+}
+.nav-menu li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.nav-menu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 5px;
+    background-color: rgb(201,76,138);
+}
+.nav-login-cart{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.nav-login-cart img{
+    width: 55px;
+    height: auto;
+    
+}
+.nav-login-cart button{
+    width: 110px;
+    height: 50px;
+    outline: none;
+    border: .1rem solid var(--header-text-color);
+    border-radius: 35px;
+    background-color: white;
+    color: var(--header-text-color);
+    font-size: var(--normal-size);
+    font-weight: var(--normal-weight-bold);
+    cursor: pointer;
+    margin-bottom: .5rem;
+}
+.nav-login-cart button:active{
+    background-color: aliceblue;
+}
+.nav-cart-count{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40px;
+    margin-left: -40px;
+    border-radius: 10px;
+    font-size: 10px;
+    background-color: var(--header-shadow);
+    color: white;
+}
+.shop-dropdown{
+    position: relative;
+}
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid var(--header-text-color);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    padding: 5px 0;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.nav-menu li:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+.dropdown a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--header-shadow);
+    font-size: var(--normal-size);
+    font-weight: var(--normal-weight-bold);
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: var(--header-shadow);
+    color: white;
+}

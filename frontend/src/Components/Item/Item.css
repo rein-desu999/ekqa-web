@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+    --header-text-color: rgb(221 119 171);
+    --header-shadow: rgb(201,76,138);
+    --lilac: #e6e8ff;
+
+    --h2-font: "Titillium+Web";
+    --h2-size: 100px;
+    --h2-weight: 600;
+    --normal-font: "Nunito:ital";
+    --normal-weight-bold: 500;
+    --normal-weight: 300;
+    --normal-size: 1rem;
+    --normal-size-bold:1.5rem;
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.item{
+    width: 350px;
+}
+.item-image-container{
+    width: 280px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.item-image-container img{
+    max-width: 90%;
+    height: auto;
+    border-radius: 5px;
+}
+.item p{
+    font: var(--normal-font);
+    font-size: 1.5rem;
+    margin: 6px 0px;
+    padding-bottom: 3px;
+    display: flex;
+}
+.item-price{
+    display: flex;
+    gap: 20px;
+}
+.item-price_new{
+    color: var(--header-shadow);
+    font: var(--normal-font);
+    font-size: var(--normal-size-bold);
+    font-weight: var(--normal-weight-bold);
+}
+.item-price_old{
+    color: gray;
+    font: var(--normal-font);
+    font-size: var(--normal-size-bold);
+    font-weight: var(--normal-weight);
+    text-decoration: line-through;
+}
+.item:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}

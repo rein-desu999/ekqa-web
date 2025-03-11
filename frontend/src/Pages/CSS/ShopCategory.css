@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+:root{
+    --header-text-color: rgb(221 119 171);
+    --header-shadow: rgb(201,76,138);
+    --lilac: #e6e8ff;
+
+    --h1-font: "Titillium+Web";
+    --h1-size:150px;
+    --h1-weight: 700;
+    --h2-font: "Titillium+Web";
+    --h2-size: 100px;
+    --h2-weight: 600;
+    --normal-font: "Nunito:ital";
+    --normal-weight-bold: 500;
+    --normal-weight: 300;
+    --normal-size: 1rem;
+    --normal-size-bold:1.5rem;
+}
+.shopcategory{
+    display: flex;
+    background: var(--lilac);
+    /*background: rgb(201, 203, 232, 0.7);*/
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.shopcategory-indexSort{
+    display: flex;
+    padding: 10px;
+    margin: 20px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shopcategory-sort{
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid #888;
+}
+.shopcategory-indexSort p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.shopcategory-indexSort p span{
+    font-weight: 600;
+}
+.shopcategory-product{
+    margin: 20px 170px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 80px;
+}
+.shopcategory-no-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; 
+    margin: 20px 0;
+    text-align: center;
+}
+
+.shopcategory-no-products h2 {
+    font-size: 1.5rem; 
+    color: var(--header-shadow);
+    white-space: nowrap; 
+}
+
+.shopcategory-product {
+    margin: 20px 170px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 80px;
+}
+.shopcategory-loadmore{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto;
+    width: 233px;
+    height: 69px;
+    border-radius: 75px;
+    background: white;
+    color: var(--header-text-color);
+    font-size: var(--normal-size-bold);
+    font-weight: var(--h2-weight);
+}
