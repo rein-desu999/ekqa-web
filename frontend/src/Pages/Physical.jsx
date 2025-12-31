@@ -1,6 +1,6 @@
 import React from 'react';
 import './CSS/Physical.css';
-import ShopCategory from './ShopCategory';
+import ShopCategory from './Shop/ShopCategory';
 
 const Physical = () => {
   return <ShopCategory category="physical" />;
