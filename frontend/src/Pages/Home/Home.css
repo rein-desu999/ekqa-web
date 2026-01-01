@@ -1,0 +1,495 @@
+.home-hero {
+  min-height: calc(100vh - 100px); /* 100px navbar height */
+  display: flex;
+  align-items: center;
+  padding: 72px 0;
+}
+
+.home-section { padding: 72px 0; }
+
+/* NEW: force white background for specific sections */
+.section-white {
+  background: #fff;
+}
+
+.home-subtitle {
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.home-text {
+  margin-top: 14px;
+  line-height: 1.75;
+}
+
+.home-cards {
+  margin-top: 28px;
+  gap: 18px;
+}
+
+.card p {
+  margin-top: 10px;
+}
+
+.home-section.alt {
+  background: var(--bg-lilac);
+}
+
+.mission-bg {
+  position: relative;
+  background-size: cover;              /* prevents tiling */
+  background-repeat: no-repeat;        /* prevents repeat */
+  background-position: center 35%;     /* slight upward focus */
+  border-top: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* darker overlay for readability */
+.mission-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    radial-gradient(circle at 20% 20%, rgba(0,0,0,0.35), rgba(0,0,0,0.75));
+}
+
+/* keeps content above overlay */
+.mission-bg > .container {
+  position: relative;
+}
+
+/* make mission text readable on dark overlay */
+.mission-bg .home-text,
+.mission-bg .home-h2,
+.mission-bg .card h3,
+.mission-bg .card p {
+  color: #fff;
+}
+
+/* make the cards slightly translucent */
+.mission-bg .card {
+  background: rgba(255,255,255,0.90);
+}
+
+.mission-bg .card h3,
+.mission-bg .card p {
+  color: #111;
+}
+
+.home-hero-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.home-kicker {
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-bottom: 10px;
+}
+
+.home-title {
+  font-family: "Titillium Web", system-ui, sans-serif;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+
+.home-h2 {
+  font-family: "Titillium Web", system-ui, sans-serif;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  margin-bottom: 16px;
+}
+
+.home-subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.home-hero-image {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.10);
+}
+
+.home-text {
+  color: var(--text);
+  font-size: 1rem;
+  max-width: 80ch;
+}
+
+.home-muted {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.home-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.accent {
+  color: var(--header-shadow);
+  font-weight: 900;
+}
+
+.btn {
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--header-shadow);
+  color: white;
+  border-color: transparent;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.home-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.event-card {
+  position: relative;
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  min-height: 190px;
+}
+
+.event-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transform: scale(1.05); /* slight zoom = more premium */
+}
+
+.event-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.75) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.10) 100%
+  );
+}
+
+.event-meta {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+}
+
+/* requested: title white, date grey */
+.event-title {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 0.2px;
+  color: #fff;
+}
+
+.event-date {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.72); /* grey */
+}
+
+/* gentle hover (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .event-card:hover img {
+    transform: scale(1.10);
+    transition: transform 260ms ease;
+  }
+}
+
+.support {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.support-note {
+  background: var(--bg-teal);
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.support-title {
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.support-text {
+  color: var(--muted);
+}
+
+.events-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--header-shadow);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.events-grid img {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+/* NEW: partial divider between white sections */
+.section-divider {
+  height: 4px; /* thicker */
+  width: min(980px, calc(100% - (var(--gutter) * 2)));
+  margin: 0 auto;
+  background: var(--teal-blue);
+  border-radius: 999px; /* soft, premium look */
+}
+
+/* -----------------------------
+   FOUNDER SECTION (new)
+-------------------------------- */
+.founder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.founder-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  background: #fff;
+}
+
+.founder-img {
+  width: 100%;
+  height: clamp(260px, 42vw, 420px);
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.founder-title {
+  margin-bottom: 6px;
+}
+
+.founder-sub {
+  margin-top: 0;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.98rem;
+}
+
+.founder-card {
+  margin-top: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: rgba(201, 203, 232, 0.18);
+}
+
+.founder-h3 {
+  margin: 0 0 8px;
+}
+
+.founder-text {
+  max-width: 78ch;
+}
+
+/* Different animation than <Reveal />:
+   lift + blur + subtle stagger */
+.founder-anim {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(10px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease,
+    filter 700ms ease;
+}
+
+.founder.is-in .founder-anim {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.founder.is-in .founder-anim--img {
+  transition-delay: 80ms;
+}
+
+.founder.is-in .founder-anim--text {
+  transition-delay: 180ms;
+}
+
+/* Desktop layout */
+@media (min-width: 900px) {
+  .home-hero-inner {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 32px;
+  }
+
+  .home-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .support {
+    grid-template-columns: 1.3fr 0.7fr;
+  }
+
+  .founder {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    min-height: auto;
+    padding: 52px 0;
+  }
+  .home-section { padding: 56px 0; }
+
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+    .founder {
+    gap: 14px;
+  }
+
+  .founder-media {
+    /* make the image card smaller */
+    max-width: 260px;
+    margin: 0 auto; /* center it */
+  }
+
+  .founder-img {
+    height: auto;              /* let image define its own height */
+    max-height: 320px;         /* prevent it from being too tall */
+    object-fit: contain;       /* SHOW THE FULL IMAGE */
+    object-position: center;   /* no cropping */
+    background: #fff;          /* clean edges if aspect ratio differs */
+  }
+
+  .founder-sub {
+    font-size: 0.92rem;
+  }
+
+  .founder-card {
+    padding: 14px;
+  }
+
+  .founder-text {
+    max-width: 100%;
+  }
+
+  /* Make the animation a bit lighter on small screens */
+  .founder-anim {
+    transform: translateY(12px);
+    filter: blur(7px);
+  }
+}
+
+/* Founder — tablet / split-screen desktop (no wack crop) */
+@media (min-width: 481px) and (max-width: 899px) {
+  .founder-media {
+    max-width: 420px;   /* keeps it from getting weirdly wide */
+    margin: 0 auto;     /* centered when stacked */
+  }
+
+  .founder-img {
+    height: auto;                 /* avoid forced tall crop */
+    aspect-ratio: 4 / 5;          /* portrait-friendly frame */
+    object-fit: cover;            /* still premium, but controlled */
+    object-position: center 15%;  /* show more face/top area */
+    display: block;
+  }
+}
+

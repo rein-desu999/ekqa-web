@@ -1,0 +1,115 @@
+/* ============================
+   OUR TEAM – hierarchy layout
+=============================== */
+
+.team {
+  background: #fff;
+}
+
+.team-inner {
+  text-align: center;
+}
+
+/* Header */
+.team-header {
+  max-width: 620px;
+  margin: 0 auto 48px;
+}
+
+.team-intro {
+  color: var(--muted);
+}
+
+/* Founder (top node) */
+.team-founder {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+/* Branch (lower level) */
+.team-branch {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+/* Cards */
+.team-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 26px;
+  min-width: 220px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Founder emphasis */
+.team-card.leader {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-md);
+}
+
+/* Text */
+.team-name {
+  font-weight: 900;
+  font-size: 1.05rem;
+}
+
+.team-role {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* --- Team photos --- */
+.team-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-photoWrap {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px; /* circle */
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* Founder slightly bigger */
+.team-card.leader .team-photoWrap {
+  width: 140px;
+  height: 140px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .team-founder {
+    margin-bottom: 36px;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 280px;
+  }
+  .team-photoWrap {
+    width: 110px;
+    height: 110px;
+  }
+  .team-card.leader .team-photoWrap {
+    width: 125px;
+    height: 125px;
+  }
+}

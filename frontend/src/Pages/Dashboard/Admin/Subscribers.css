@@ -1,0 +1,119 @@
+.subs {
+  width: 100%;
+}
+
+.subs-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.subs-title {
+  margin: 0;
+  font-family: "Titillium Web", system-ui, sans-serif;
+  color: var(--header-shadow);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+}
+
+.subs-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.subs-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.subs-btn {
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.subs-btn.primary {
+  background: var(--header-shadow);
+  border-color: transparent;
+  color: #fff;
+}
+
+.subs-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.subs-error {
+  background: rgba(180, 35, 24, 0.08);
+  border: 1px solid rgba(180, 35, 24, 0.25);
+  color: #b42318;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.subs-tableWrap {
+  width: 100%;
+  overflow: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.subs-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 520px;
+}
+
+.subs-table th,
+.subs-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.subs-table th {
+  font-weight: 900;
+  color: var(--text);
+  background: rgba(201, 203, 232, 0.20);
+}
+
+.subs-email {
+  font-weight: 800;
+  color: var(--header-text-color);
+}
+
+.subs-loading,
+.subs-empty {
+  padding: 24px 14px;
+  text-align: center;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.subs-actionsCell {
+  white-space: nowrap;
+}
+
+.subs-btn.danger {
+  border-color: rgba(180, 35, 24, 0.25);
+  background: rgba(180, 35, 24, 0.08);
+  color: #b42318;
+}
+
+.subs-btn.danger:hover {
+  filter: brightness(0.98);
+}

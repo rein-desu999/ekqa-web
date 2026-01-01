@@ -1,45 +1,97 @@
-import React, {useState} from 'react'
-import './NewsLetter.css'
-import event1_6 from '../../../assets/Event/1/event1_6.jpg'
+import React, { useState } from "react";
+import "./NewsLetter.css";
+import event1_6 from "../../../assets/Event/1/event1_6.jpg";
 
-const NewsLetter =()=>{
-    const [formSubmitted, setFormSubmitted] = useState(false);
+const NewsLetter = () => {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" }); // success | error | loading
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setFormSubmitted(true);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitted(true);
 
-        const form = e.target;
+    // basic HTML validation
+    if (!e.currentTarget.checkValidity()) {
+      setStatus({ type: "error", message: "Please enter a valid email address." });
+      return;
+    }
 
-        if (form.checkValidity()) {
-            alert('Form submitted successfully!');
-            form.reset(); // Reset the form after successful submission
-            setFormSubmitted(false);
-        }
-        else{
-            alert('Please correct the highlighted field.');
-        }
-    };
+    try {
+      setStatus({ type: "loading", message: "Submitting..." });
 
-    return (
-        <div className='newsletter'>
-            <div className="newsletter-left">
-                <img src={event1_6} alt="" />
-            </div>
-            <div className="newsletter-right">
-                <h1>Get News On Our Next Events and Recource</h1>
-                <p>Subscribe to our newletter and stay updated</p>
-                <div>
-                    <form onSubmit={handleSubmit} noValidate>
-                        <input type="name" placeholder='Firstname & Lastname' name="name" required className={formSubmitted ? 'validated':''}/>
-                    
-                        <input type="email" placeholder='Your Email ID' name="email" required className={formSubmitted ? 'validated':''}/>
-                        <button>Subscribe</button>
-                    </form>
-                </div>
-            </div>
+      // Later you’ll create this backend endpoint:
+      // - Save email to MongoDB
+      // - Send notification email to alyssaaingg@gmail.com
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        let msg = "Something went wrong. Please try again.";
+        try {
+          const data = await res.json();
+          if (data?.message) msg = data.message;
+        } catch (_) {}
+        throw new Error(msg);
+      }
+
+      setStatus({ type: "success", message: "You’re subscribed! 🎉" });
+      setEmail("");
+      setSubmitted(false);
+    } catch (err) {
+      setStatus({ type: "error", message: err.message || "Submission failed." });
+    }
+  };
+
+  return (
+    <section className="newsletter">
+      <div className="container newsletter-inner">
+        <div className="newsletter-left">
+          <img src={event1_6} alt="Newsletter" />
         </div>
-    );
+
+        <div className="newsletter-right">
+          <h2>Get News On Our Next Events and Resource</h2>
+          <p>Subscribe to our newsletter and stay updated.</p>
+
+          <form className="newsletter-form" onSubmit={handleSubmit} noValidate>
+            <label className="newsletter-label" htmlFor="newsletter-email">
+              Email Address
+            </label>
+
+            <input
+              id="newsletter-email"
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className={submitted ? "validated" : ""}
+              autoComplete="email"
+            />
+
+            <button className="newsletter-btn" type="submit" disabled={status.type === "loading"}>
+              {status.type === "loading" ? "Submitting..." : "Subscribe"}
+            </button>
+
+            {status.type === "success" ? (
+            <p className="newsletter-status is-success" role="status">
+                You’re subscribed! 🎉{" "}
+                <a href="/unsubscribe" style={{ textDecoration: "underline" }}>
+                Unsubscribe
+                </a>
+            </p>
+            ) : null}
+
+          </form>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default NewsLetter;

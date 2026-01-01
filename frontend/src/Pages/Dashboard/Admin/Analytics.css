@@ -1,0 +1,57 @@
+.dash-analytics {
+  width: 100%;
+}
+
+.dash-analytics-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.dash-analytics-title {
+  margin: 0;
+  font-family: "Titillium Web", system-ui, sans-serif;
+  color: var(--header-shadow);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+}
+
+.dash-analytics-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.dash-analytics-link {
+  text-decoration: none;
+  font-weight: 900;
+  color: #fff;
+  background: var(--header-shadow);
+  border-radius: 999px;
+  padding: 10px 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.dash-analytics-frameWrap {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.dash-analytics-frame {
+  width: 100%;
+  height: min(75vh, 820px);
+}
+
+.dash-analytics-note {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.5;
+}
+

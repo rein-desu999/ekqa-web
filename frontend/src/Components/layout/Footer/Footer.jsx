@@ -11,6 +11,7 @@ const Footer =()=>{
                 <img src={logo} alt="" />
                 <p>EKQA</p>
             </div>
+            <div className="footer-row">
             <ul className="footer-links">
                 <li>About</li>
                 <li>Support</li>
@@ -18,13 +19,22 @@ const Footer =()=>{
                 <li>Quick Link</li>
                 <li>Contact</li>
             </ul>
+
             <div className="footer-socials-icon">
                 <div className="footer-icons-container">
-                    <img src={insta} alt="" />
+                <a
+                    href="https://www.instagram.com/empoweringkidswithautism/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram"
+                >
+                    <img src={insta} alt="Instagram" />
+                </a>
                 </div>
                 <div className="footer-icons-container">
-                    <img src={linkedin} alt="" />
+                <img src={linkedin} alt="" />
                 </div>
+            </div>
             </div>
             <div className="footer-copyright">
                 <hr/>

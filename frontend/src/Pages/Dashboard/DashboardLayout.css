@@ -1,0 +1,124 @@
+/* Dashboard shell */
+.dash {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Sidebar */
+.dash-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 18px 16px;
+  border-right: 1px solid var(--border);
+  background: #fff;
+}
+
+.dash-brand {
+  font-family: "Titillium Web", system-ui, sans-serif;
+  font-weight: 900;
+  color: var(--header-shadow);
+  font-size: 1.25rem;
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dash-nav {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dash-link {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--text);
+  border: 1px solid transparent;
+}
+
+.dash-link:hover {
+  background: rgba(201, 203, 232, 0.18);
+  border-color: rgba(201, 203, 232, 0.35);
+}
+
+.dash-link.active {
+  background: rgba(119, 203, 221, 0.22);
+  border-color: rgba(119, 203, 221, 0.6);
+  color: var(--header-shadow);
+}
+
+.dash-logout {
+    margin-top: 25px;
+  width: 100%;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-weight: 900;
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* Main */
+.dash-main {
+  padding: 22px;
+  background: #fff;
+}
+
+/* Give the content a nice max width */
+.dash-main > * {
+  width: min(1100px, 100%);
+  margin-inline: auto;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .dash {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-sidebar {
+    position: relative;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+    .dash-nav {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 40px;
+    }
+
+  .dash-link {
+    height: 40px;
+  }
+
+
+  .dash-main {
+    padding: 16px;
+  }
+.dash-spacer {
+  margin-top: 16px;          /* space under nav */
+  border-top: 1px solid var(--border);
+  padding-top: 16px;         /* space above logout */
+}
+
+}

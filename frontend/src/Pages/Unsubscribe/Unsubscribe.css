@@ -1,0 +1,77 @@
+.unsub {
+  width: min(560px, 100%);
+  margin: 40px auto;
+  padding: 0 16px;
+  color: var(--text);
+}
+
+.unsub-title {
+  margin: 0;
+  font-family: "Titillium Web", system-ui, sans-serif;
+  color: var(--header-shadow);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.unsub-subtitle {
+  margin: 10px 0 18px;
+  color: var(--muted);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.unsub-form {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+
+.unsub-label {
+  display: grid;
+  gap: 6px;
+  font-weight: 800;
+}
+
+.unsub-input {
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 0 12px;
+  outline: none;
+}
+
+.unsub-btn {
+  height: 44px;
+  border-radius: 999px;
+  border: none;
+  background: var(--header-shadow);
+  color: #fff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.unsub-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.unsub-msg {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 800;
+}
+
+.unsub-msg.ok {
+  background: rgba(0, 180, 90, 0.08);
+  border: 1px solid rgba(0, 180, 90, 0.18);
+}
+
+.unsub-msg.err {
+  background: rgba(180, 35, 24, 0.08);
+  border: 1px solid rgba(180, 35, 24, 0.25);
+  color: #b42318;
+}
